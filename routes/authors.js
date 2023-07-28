@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Author = require('../models/author')
+const Book = require('../models/book')
 
 // All Authors Route
 router.get('/', async (req, res) => {
@@ -72,7 +73,7 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', async (req, res) => {
     let author
     try {
         author = await Author.findById(req.params.id)
